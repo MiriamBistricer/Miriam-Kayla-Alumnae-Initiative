@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Giving Back</title>
+		
+		<!--font is imported from googlefonts.com -->
+		<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap" rel="stylesheet">
+
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			//loads content from eventDescriptions.html into the accordian
+			//content is only loaded if the user clicks on the header
+			$(document).ready(function() {
+				$("#title1").click(function() {
+					$("#desc1").load("eventDescriptions.html #description-event1");
+				});
+				$("#title2").click(function() {
+					$("#desc2").load("eventDescriptions.html #description-event2");
+				});
+				//the most recent event is displayed automatically, so the content is loaded without the user clicking on the title
+				$("#desc3").load("eventDescriptions.html #description-event3"
+					);
+
+					});
+				
+				//turns <div> with id = "accordian" into an accordian widget
+					$(function() {
+						$("#accordion").accordion({
+							collapsible : true
+						});
+					});
+		</script>
+	</head>
+
+	<body>
+		
+		<!--begin navigation bar -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light" id = "nav">
+				<a class="navbar-brand" style="color: rgb(232, 137, 136)"><img src="Images/logo.png" alt="Giving Back logo" title="Giving Back logo" height="30px" width="28px" /> Giving Back</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<li class="nav-item dropdown">
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item active">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="#nav">Home</a>
+									<a class="dropdown-item" href="#about">About</a>
+									<a class="dropdown-item" href="#upcoming">Upcoming Events</a>
+									<a class="dropdown-item" href="#previous">Previous Events</a>
+									<a class="dropdown-item" href="#testimonials">Testimonials</a>
+									<a class="dropdown-item" href="#contact">Contact us</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sign_up.html">Sign Up</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="donate.html">DONATE</a>
+							</li>
+
+						</ul>
+					</div>
+			</nav>
+		<!--end nav bar -->
+		
+		<a href="#nav">
+		<svg class="bi bi-arrow-up-circle-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="var(--darkerPink)" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-10.646.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+		</svg></a>
+		
+		<!--1/2 size background image -->
+		<div class="pic"></div>
+		
+		<h1>Miriam Kayla Alumnae Initiative</h1>
+		<h1 class = "title">Giving Back</h1>
+		
+		<!--This section contains information about Giving Back -->
+		<section id="about">
+			<h1 >About</h1>
+			<div class="decoration"></div>
+			<p>
+				The Miriam Kayla Alumnae Initiative "Giving Back" will provide the Five Towns and Far Rockaway communities with monthly chessed events in addition to serving as a network for TAG alumnae to share upcoming chesed opportunities.
+				“Giving Back” is a program created L’luy Nishmas Morah Miriam Adler, our beloved teacher at TAG H.S., to whom chesed played  a vital role.
+				This initiative will be a tool for alumnae to continue the TAG chessed legacy through “Giving Back” to the community, which has given so much to them.
+			</p>
+			
+		</section>
+		
+		<!--This section contains a carousel that flyers for the three upcoming events -->
+		<section id="upcoming">
+			<h1>Upcoming Events</h1>
+			<div class="decoration" style="width: 150px"></div>
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="Images/flyer1.PNG" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="Images/flyer2.PNG" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="Images/flyer3.PNG" class="d-block w-100" alt="...">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+			</div>
+		</section>
+
+		<!--This section contains an accordian with the activities and descriptions of previous events -->
+		<section id="previous">
+			<h1>Previous Events</h1>
+			
+			<div class="decoration" style="width: 150px"></div>
+			
+			<div id="accordion">
+				<h3 class= "accordion top" id = "title3">Event 3- JEP carnival</h3>
+				<p class= "accordian" id = "desc3"></p>
+				
+				<h3 class= "accordian top" id = "title2">Event 2- Challah Bake</h3>
+
+				<p class= "accordian" id = "desc2"></p>
+
+				<h3 class="accordian top" id = "title1">Event 1- Rosh Hashana packages for single mothers</h3>
+				<p class= "accordian" id = "desc1"></p>
+			</div>
+		</section>
+
+		<!--This section contains testimonials and contact us -->
+		<section id="testimonials_and_feedback">
+			<!--vue component, displays testimonials and contains tabs with forms so the user can give feedback -->
+		    <feedback></feedback>
+		</section>
+		
+		<!--begin footer -->
+		<footer>
+			<hr />
+			Giving Back is TAG High School's alumnae chessed program. For more information, contact Morah Judowitz at _______
+		</footer>
+		<!--end footer -->
+		
+		<script src="Vue.js"></script>
+	</body>
+</html>

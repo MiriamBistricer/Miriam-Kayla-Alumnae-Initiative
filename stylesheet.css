@@ -1,0 +1,265 @@
+/* Variables */
+:root {
+    --lightPink: rgb(255, 227, 226);
+    --darkerPink: rgb(232, 137, 136);
+}
+
+body, html {
+	font-family: 'Darker Grotesque', sans-serif !important;
+	height: 100%;
+	margin: 0;
+}
+
+/*css on html elements*/
+h1 {
+	margin: 100px auto 0 auto;
+	text-align: center;
+	padding: 20px 20px 0 20px;
+	background-color: white;
+}
+
+h3 {
+	text-align: center;
+}
+
+footer {
+	text-align: center; 
+	clear: left;
+}
+
+p {
+	line-height: 1.5em;
+	font-size: 20px;
+	margin: auto;
+	padding: 10px;
+}
+
+a:hover {
+	color: var(--darkerPink) !important;
+}
+
+li {
+	display: inline-block;
+}
+
+input {
+	width: 50%;
+	height: 25px;
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 100%;
+	height: 60px;
+}
+
+button {
+	margin-top: 30px;
+	border: none;
+	background-color: var(--darkerPink);
+	color: white;
+	height: 40px;
+	width: 100px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+/* ids */
+#previous {
+	height: 500px;
+	margin: 30px;
+}
+
+
+#about {
+	width: 50%;
+	margin: 0 auto 0 auto;
+}
+
+#text {
+	padding: 20px;
+	padding-bottom: 60px;
+}
+
+#accordion {
+	margin: auto;
+	width: 800px;
+}
+
+#app {
+	height: 500px;
+	padding: 20px;
+}
+
+/* classes */
+.carousel-inner, .d-block {
+	height: 400px;
+	width: 510px;
+	border-radius: 3px;
+	margin: auto;
+}
+
+.card {
+	display: inline-block;
+	float: left;
+	width: 25%;
+	height: 250px;
+	margin: 3%;
+}
+
+.pic {
+	background-image: url("Images/packages.jpg");
+	height: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.carousel-inner, .d-block {
+	height: 400px;
+	width: 510px;
+	margin: auto;
+}
+
+.title {
+	margin-top: -25px;
+	font-size: 32px;
+}
+
+.decoration {
+	width: 100px;
+	border-bottom: 5px solid var(--lightPink);
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+.product-image, .product-info {
+	margin-top: 10px;
+	width: 50%;
+}
+
+.disabledButton {
+	background-color: #d8d8d8;
+}
+
+.review-form {
+	width: 400px;
+	padding: 20px;
+	margin: 40px;
+	border: 1px solid #d8d8d8;
+}
+
+.tabs {
+	margin-left: 10%;
+	cursor: pointer;
+	color: black;
+	border: 1px solid #EFEFEF;
+	border-radius: 2px;
+	padding: 10px;
+	font-style: 'Darker Grotesque', sans-serif;
+	width: 40%;
+	margin: 10px;
+}
+
+.tabs:hover {
+	background-color: #EFEFEF;
+}
+.activeTab {
+	color: black;
+	text-decoration: underline;
+	background-color: #EFEFEF;
+}
+.navbar {
+	background-color: var(--lightPink) !important;
+}
+
+.bi.bi-arrow-up-circle-fill{
+	position: fixed;
+	
+        bottom: 20px;
+        float: right;
+        right: 18.5%;
+        left: 77.25%;
+        max-width: 300px;
+        width: 200%;
+        
+        padding: .5px;
+ 
+}
+
+.submit {
+	height: 40px;
+}
+
+.ui-accordion-content {
+	height: 200px;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.pic {
+
+	background-image: url("Images/packages.jpg");
+	/* Full height */
+	height: 50%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.carousel-inner, .d-block {
+	height: 350px;
+	width: 270px;
+	margin: auto;
+}
+
+.ui-datepicker-calendar {
+	display: none;
+}
+.off {
+	display: none;
+}
+.validateTips {
+	color: grey;
+	font-size: 16px;
+}
+.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix.ui-draggable-handle {
+	background-color: white;
+}
+
+.chessed {
+	background-image: url("Images/white.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-color: #EFEFEF;
+}
+
+.top {
+	background-color: #EEE;
+	border-radius: 5px;
+	padding: 10px;
+	background-image: url("Images/pink.jpg");
+	/* Full height */
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.line {
+	width: 100px;
+	height: 10px   :
+	background-color: #DDD  :
+	display: inline-block;
+}
+
+/*donations page*/
+span#ui-id-1.ui-dialog-title {
+	font-size: 200%;
+	margin-right: 25%;
+	margin-left: 31%; 
+}
+button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+	width: 10%;
+	height: 25%;
+}

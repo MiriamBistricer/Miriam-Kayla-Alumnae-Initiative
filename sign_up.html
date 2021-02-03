@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<title>Sign Up</title>
+		<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap" rel="stylesheet">
+
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="gb.js"></script>
+		<style>
+			h2, h3{
+				width: 800px;
+				margin: auto;
+				text-align: center;
+			}
+			#dialog-form{
+				background-color: white;
+				padding: 10px;
+			}
+			div.ui-dialog-buttonset{
+				background-color: white;
+				padding: 10px;
+			}
+			button.ui-button.ui-corner-all.ui-widget.ui-button-icon-only.ui-dialog-titlebar-close {
+	width: 15%;
+	height: 25%;
+}
+
+			form{
+				width: 300px;
+			}
+			input{
+				width: 250px;
+			}	
+			
+		</style>
+		<script>
+  $( function() {
+    var dialog, form,
+ 
+      // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
+      emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+      name = $( "#name" ),
+      email = $( "#email" ),
+      specifications = $( "#specications" ),
+      allFields = $( [] ).add( name ).add( email ),
+      tips = $( ".validateTips" );
+ 
+    function updateTips( t ) {
+      tips
+        .text( t )
+        .addClass( "ui-state-highlight" );
+      setTimeout(function() {
+        tips.removeClass( "ui-state-highlight", 1500 );
+      }, 500 );
+    }
+ 
+    function checkLength( o, n, min, max ) {
+      if ( o.val().length > max || o.val().length < min ) {
+        o.addClass( "ui-state-error" );
+        updateTips( "Length of " + n + " must be between " +
+          min + " and " + max + "." );
+        return false;
+      } else {
+        return true;
+      }
+    }
+ 
+    function checkRegexp( o, regexp, n ) {
+      if ( !( regexp.test( o.val() ) ) ) {
+        o.addClass( "ui-state-error" );
+        updateTips( n );
+        return false;
+      } else {
+        return true;
+      }
+    }
+ 
+    function addVolunteer() {
+      var valid = true;
+      allFields.removeClass( "ui-state-error" );
+ 
+      valid = valid && checkLength( name, "username", 3, 16 );
+      valid = valid && checkLength( email, "email", 6, 80 );
+ 
+      valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+      valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
+ 
+      if ( valid ) {
+      	
+        dialog.dialog( "close" );
+      }
+      return valid;
+    }
+ 
+    dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 400,
+      width: 350,
+      modal: true,
+      buttons: {
+        "Submit": addVolunteer
+      },
+      close: function() {
+        form[ 0 ].reset();
+        allFields.removeClass( "ui-state-error" );
+      }
+    });
+ 
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+      event.preventDefault();
+      addVolunteer();
+    });
+
+    $( "#sign_up" ).button().on( "click", function() {
+      dialog.dialog( "open" );
+    });
+  } );
+  </script>
+	</head>
+	<body>
+		
+<!-- begin navigation bar --> 
+<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#"><img src="Images/logo.png" alt="Giving Back logo" title="Giving Back logo" height="30px" width="28px" /> Giving Back</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				</li>
+				<li class="nav-item dropdown">
+					<div class="collapse navbar-collapse" id="navbarNavDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item active">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href="index.html#nav">Home</a>
+									<a class="dropdown-item" href="index.html#about">About</a>
+									<a class="dropdown-item" href="index.html#upcoming">Upcoming Events</a>
+									<a class="dropdown-item" href="index.html#previous">Previous Events</a>
+									<a class="dropdown-item" href="index.html#testimonials">Testimonials</a>
+									<a class="dropdown-item" href="index.html#contact">Contact us</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="sign_up.html">Sign Up</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="donate.html">DONATE</a>
+							</li>
+
+						</ul>
+					</div>
+			</nav>
+		</header>
+		<!-- end navigation bar -->
+		
+		<h2 style="margin-top: 50px">Giving Back offers several services to the Five Towns and Far Rockaway Communities in addition to the monthly chessed events.</h2>
+		<h3>Sign up below to participate in a chessed activity!</h3>
+		<div class="decoration" style="width: 500px; margin: 5px auto 20px auto"></div>
+		<div class="chessed card"">
+  <div class="card-body">
+    <h4 class="card-title">Family Support</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Help busy mothers once a week through taking their kids to a park, cooking, or doing light housework.</h6>
+    <h5 class="card-text">1-2 hours a week</h5>
+    
+   	<a href="sign_up_form.html" class="card-link">Sign up</a>
+   
+   	
+    <!-- <a href="#" class="card-link">Another link</a> -->
+   </div>
+  </div>
+
+    		<div class="chessed card"">
+  <div class="card-body">
+    <h4 class="card-title">Tutoring</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Help elementary or high school students with their homework.</h6>
+    <h5 class="card-text">1-2 hours a week</h5>
+    
+
+  <a href="sign_up_form.html" class="card-link">Sign up</a>
+ <!--   <a href="#" class="card-link">Another link</a> -->
+    </div>
+    </div>
+
+		<div class="chessed card"">
+  <div class="card-body">
+    <h4 class="card-title">Driving</h4>
+    <h6 class="card-text">This can be done on a weekly basis as part of the high school chessed program. There is also an option to receive alerts when rides are needed to and from community events.</h6>
+    <a href="sign_up_form.html" class="card-link">Sign up for a weekly route</a>
+    <a href="sign_up_form.html" class="card-link">Sign up for alerts</a>
+  
+
+
+  </div>
+</div>
+	<footer>
+				<hr />
+				Giving Back is TAG High School's alumnae chessed program. For more information, contact Morah Judowitz at _______
+			</footer>	
+		</div>
+	</body>
+</html>
+
